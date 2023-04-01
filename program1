@@ -1,0 +1,12 @@
+x,y,z;
+
+output "Enter x, y, z"; 
+input x,y,z;
+
+while ((x&(y&z))){
+	output "Please enter at least one false value";  
+	input x,y,z;
+}
+
+output (x=>y);
+output (~x<=>z);

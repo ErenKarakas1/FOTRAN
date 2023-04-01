@@ -1,0 +1,27 @@
+var;
+input var; #take input from user#
+
+if (var){
+    output "var is TRUE";
+}
+else{
+    output "var is FALSE";
+}
+
+func array listify(first,second){
+    multiply=first&second;
+    add=first|second;
+    arr1[multiply,add];
+
+    return arr1;
+}
+
+x=((var&TRUE)<=>(TRUE&var));
+y=((var|TRUE)=>(var|FALSE));
+
+z=listify(x,y);
+
+while ((x|y)){
+    x=~x;
+    output "an iteration";
+}
