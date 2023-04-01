@@ -1,5 +1,3 @@
-# out: lex.yy.c
-# 	gcc -o out lex.yy.c
 parser: lex.yy.c y.tab.c
 	gcc -o parser y.tab.c
 
