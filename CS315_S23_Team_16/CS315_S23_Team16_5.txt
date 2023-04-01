@@ -24,15 +24,15 @@ p=TRUE;
 q=~(p&q);
 
 while((p|q)){
-	r;
-	foreach element1 in array1{
-		r = ~element1;	
-		foreach element2 in array2{
-			p = palindrom(p,q,r,elemtent2);
-			r = (p->r);
-		}
-	}
-	
+    r;
+    foreach element1 in array1{
+        r = ~element1;	
+        foreach element2 in array2{
+            p = palindrom(p,q,r,elemtent2);
+            r = (p->r);
+        }
+    }
+
 
 }
 #print p#

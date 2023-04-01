@@ -1,21 +1,21 @@
-digit				[0-9]
-letter				[A-Za-z]
+digit               [0-9]
+letter              [A-Za-z]
 alphanumeric        ({letter}|{digit})
-identifier			(({letter})+({alphanumeric})*)
+identifier          (({letter})+({alphanumeric})*)
 whitespace          ([ |\t|\n|\r]*)
 char                ({alphanumeric}|{whitespace}|[;,=~&\|()\[\]{}])
 string              ((\")({char})*(\"))
 comment             ((\#)({char})*(\#))
 %%
-if					{return IF;}
+if                  {return IF;}
 elif                {return ELIF;}
-else				{return ELSE;}
+else                {return ELSE;}
 endif               {return ENDIF;}
-func				{return FUNC;}
-while				{return WHILE;}
+func                {return FUNC;}
+while               {return WHILE;}
 foreach             {return FOREACH;}
 in                  {return IN;}
-return				{return RETURN;}
+return              {return RETURN;}
 input               {return INPUT;}
 output              {return OUTPUT;}
 bool                {return TYPE;}
@@ -25,12 +25,12 @@ FALSE               {return CONST;}
 {identifier}        {return IDENTIFIER;}
 {string}            {return STRING;}
 {comment}           {return COMMENT;}
-\[					{return LSB;}
-\]					{return RSB;}
-\{					{return LCB;}
-\}					{return RCB;}
-\(					{return LP;}
-\)					{return RP;}
+\[                  {return LSB;}
+\]                  {return RSB;}
+\{                  {return LCB;}
+\}                  {return RCB;}
+\(                  {return LP;}
+\)                  {return RP;}
 \&                  {return AND;}
 \|                  {return OR;}
 \->                 {return IMPLIES;}
