@@ -1,0 +1,33 @@
+#func() takes 3 parameters p, q, and r and displays its name, the names and the values of the parameters#
+
+func bool foo(p,q,r){
+    output "foo";
+    output "p";
+    output p;
+
+    output "q";
+    output q;
+
+    output "r";
+    output r;
+
+    if (r){
+        return (p->(q|r));
+    }
+    else {
+        return (q<=>r);
+    }
+    endif
+}
+
+arr1[TRUE, FALSE];  #first array#
+arr2[TRUE, FALSE];  #second array#
+
+foreach a in arr1{
+    foreach b in arr2{
+        c=foo(a,b,FALSE);
+        output a;
+        output b;
+        output c;
+    }
+}
