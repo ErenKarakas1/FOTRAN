@@ -2,7 +2,7 @@
 func bool tester(p,q,r){
     while(~r){
         p = (p&q);
-        r = p;
+        r = q^p;
         p = ~p;
         q = (r|p);
     }
@@ -16,7 +16,6 @@ func bool tester(p,q,r){
         #q is false#
         output(r->p);
     }
-    endif
     if(p){
         r=(r&FALSE);
     }
@@ -24,7 +23,7 @@ func bool tester(p,q,r){
     return p;
 }
 s=TRUE;
-arr1[TRUE,FALSE,s];    #arr1 has TRUE, FALSE and TRUE#
+arr2 < arr1[TRUE,FALSE,s];    #arr1 has TRUE, FALSE and TRUE#
 
 foreach k in arr1{
     k=(k->TRUE);
