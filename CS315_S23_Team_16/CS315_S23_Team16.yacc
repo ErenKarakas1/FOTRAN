@@ -4,8 +4,8 @@ int yylex();
 void yyerror(const char *s);
 int error_count = 0;
 %}
-%token IF ELIF ELSE ENDIF FUNC WHILE FOREACH IN RETURN
-%token INPUT OUTPUT
+%token  IF ELIF ELSE ENDIF FUNC WHILE FOREACH IN RETURN
+%token  INPUT OUTPUT
 %token  TYPE CONST
 %token  IDENTIFIER STRING COMMENT
 %token  LSB RSB LCB RCB LP RP SC COMMA
@@ -19,6 +19,7 @@ int error_count = 0;
 %right  ASSIGN
 
 %%
+
 program:
     stmt_list
 ;
@@ -144,7 +145,9 @@ expr_list:
     logic_expr
     | logic_expr COMMA expr_list
 ;
+
 %%
+
 #include "lex.yy.c"
 int lineno = 1;
 
