@@ -2,7 +2,7 @@
 func bool tester(p,q,r){
     while(~r){
         p = (p&q);
-        r = q^p;
+        r = q-p;
         p = ~p;
         q = (r|p);
     }

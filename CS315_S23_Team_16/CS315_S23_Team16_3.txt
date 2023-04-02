@@ -1,3 +1,5 @@
+#comment#;
+
 var;
 input var; #take input from user#
 
