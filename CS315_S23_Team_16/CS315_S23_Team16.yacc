@@ -125,7 +125,7 @@ and_term:
 ;
 
 not_term:
-    NOT_OP value
+    NOT_OP LP value RP
     | value
 ;
 

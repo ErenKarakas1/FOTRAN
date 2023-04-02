@@ -1,6 +1,6 @@
 #takes 3 arguments p, q, and r#
 func bool tester(p,q,r){
-    while(~r){
+    while(~(r)){
         p = (p&q);
         r = q-p;
         p = ~p;

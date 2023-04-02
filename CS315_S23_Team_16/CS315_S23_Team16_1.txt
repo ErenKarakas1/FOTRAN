@@ -8,4 +8,4 @@ while ((x&(y&z))){
     input x,y,z;
 }
 
-output (x->y)&(~x<=>z);
+output (x->y)&(~(x)<=>z);
