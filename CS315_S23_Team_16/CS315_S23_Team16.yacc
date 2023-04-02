@@ -1,14 +1,23 @@
 %{
 #include <stdio.h>
 int yylex();
-void yyerror();
+void yyerror(const char *s);
+int error_count = 0;
 %}
 %token IF ELIF ELSE ENDIF FUNC WHILE FOREACH IN RETURN
 %token INPUT OUTPUT
-%token TYPE CONST
-%token IDENTIFIER STRING COMMENT
-%token LSB RSB LCB RCB LP RP SC COMMA
-%token D_IMPLIES IMPLIES AND OR NOT_OP ASSIGN
+%token  TYPE CONST
+%token  IDENTIFIER STRING COMMENT
+%token  LSB RSB LCB RCB LP RP SC COMMA
+%token  D_IMPLIES IMPLIES AND OR NOT_OP ASSIGN
+
+%left   D_IMPLIES
+%right  IMPLIES
+%left   AND
+%left   OR
+%left   NOT_OP
+%right  ASSIGN
+
 %%
 program:
     stmt_list
@@ -32,6 +41,7 @@ stmt:
     | function
     | func_call
     | COMMENT
+    | error SC { yyerrok; }
 ;
 
 decleration_stmt:
@@ -140,9 +150,16 @@ int lineno = 1;
 
 int main() {
     yyparse();
+    if (error_count > 0) {
+        printf("\nTotal syntax errors: %d\n", error_count);
+    }
+    else {
+        printf("Input program is valid\n");
+    }
     return 0;
 }
 
-void yyerror(char *s) {
-    printf("Syntax error on line %d \n", lineno);
+void yyerror(const char *s) {
+    fprintf(stderr, "%s on line %d!\n", s, lineno);
+    error_count++;
 }

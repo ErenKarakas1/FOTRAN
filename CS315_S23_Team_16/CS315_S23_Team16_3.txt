@@ -17,12 +17,13 @@ func array listify(first,second){
     return arr1;
 }
 
-x=((var&TRUE)<=>(TRUE&var));
+output test=>y;
+x=((var&TRUE)<=>(TRUE^var));
 y=((var|TRUE)->(var|FALSE));
 
 z=listify(x,y);
 
-while ((x|y)){
-    x=~x;
+while ((x&y)){
+    x=x=>z;
     output "an iteration";
 }

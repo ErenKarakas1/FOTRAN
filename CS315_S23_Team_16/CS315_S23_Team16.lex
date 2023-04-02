@@ -6,7 +6,9 @@ whitespace          ([ |\t|\n|\r]*)
 char                ({alphanumeric}|{whitespace}|[;,=~&\|()\[\]{}])
 string              ((\")({char})*(\"))
 comment             ((\#)({char})*(\#))
+
 %%
+
 if                  {return IF;}
 elif                {return ELIF;}
 else                {return ELSE;}
@@ -40,5 +42,8 @@ FALSE               {return CONST;}
 \,                  {return COMMA;}
 \=                  {return ASSIGN;}
 \n                  { extern int lineno; lineno++; }
+.                   {printf("");}
+
 %%
+
 int yywrap() { return 1; }

@@ -12,7 +12,6 @@ func bool palindrom(a,b,c,d){
 }
 
 #decleration#
-x,y,z;
 
 output "Enter x, y, z";
 input x,y,z;
